@@ -60,7 +60,7 @@ const SearchClick = () => {
     const p = document.createElement("p");
     p.innerHTML = alert`please input value`;
   } else {
-    console.log("done ", searchInputValue);
+//     console.log("done ", searchInputValue);
     LoadPhones(searchInputValue);
     searchInput.value = "";
   }
@@ -78,7 +78,7 @@ const DisplayPhone = (phoneDisplay) => {
   if (phoneDisplay.length > 0) {
     // console.log("dssdd",phoneDisplay.length);
     const NewphoneDisplay = phoneDisplay.slice(0, 20);
-    console.log("new", NewphoneDisplay.length);
+//     console.log("new", NewphoneDisplay.length);
 
     const PhoneDiv = document.getElementById("about-phone");
     PhoneDiv.textContent = "";
