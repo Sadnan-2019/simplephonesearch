@@ -1,51 +1,91 @@
-console.log("ll;po vyt");
+// console.log("ll;po vyt");
 
+          const url = `https://openapi.programming-hero.com/api/phones`;
+            fetch(url)
+              .then((res) => res.json())
+                   .then((phones) => phone(phones.data));
+              
+
+
+
+const phone = phoneDisplay=>{
+
+          const PhoneDiv = document.getElementById("about-phone");
+              PhoneDiv.textContent = "";
+              phoneDisplay.forEach((phone) => {
+                const div = document.createElement("div");
+                div.classList.add("col");
+                div.innerHTML = `
+                                                
+                                                
+                                                <div class="card h-100 p-4">
+                                                    <img src="${phone.image}" class="card-img-top img-fluid w-50 " alt="...">
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Brand Name : ${phone.brand}</h5>
+                                                      <p class="card-title fw-bolder">Phone Name : ${phone.phone_name}</p>
+                                                     </div>
+                                                    <div class="card-footer">
+                                                    <button class="btn btn-info " onclick="GetphoneId('${phone.slug}')" >Phone Details</button>
+                                                    </div>
+                                                  </div>
+                                                
+                                                `;
+          
+                PhoneDiv.appendChild(div);
+              });
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 const SearchClick = () => {
   const searchInput = document.getElementById("search-field");
   const searchInputValue = searchInput.value;
-  
-if(searchInputValue === "" || searchInputValue == null){
-          console.log("empty>>>")
-          
-}else{
-          console.log("done ",searchInputValue);
-          LoadPhones(searchInputValue);
-          searchInput.value = "";
-}
- 
+
+  if (searchInputValue === "" || searchInputValue == null) {
+    // console.log("empty>>>")
+    const p = document.createElement("p");
+    p.innerHTML = alert`please input value`;
+  } else {
+    console.log("done ", searchInputValue);
+    LoadPhones(searchInputValue);
+    searchInput.value = "";
+  }
 };
 
 const LoadPhones = (searchText) => {
-
-
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
   fetch(url)
     .then((res) => res.json())
-//     .then((phones) => DisplayPhone(phones.data));
+    //     .then((phones) => DisplayPhone(phones.data));
     .then((phones) => DisplayPhone(phones.data));
 };
 
-LoadPhones("");
-
 const DisplayPhone = (phoneDisplay) => {
+  if (phoneDisplay.length > 0) {
+    // console.log("dssdd",phoneDisplay.length);
+    const NewphoneDisplay = phoneDisplay.slice(0, 20);
+    console.log("new", NewphoneDisplay.length);
 
-          if(phoneDisplay.length > 0){
-                    console.log("dssdd",phoneDisplay.length);
-                    const NewphoneDisplay = phoneDisplay.slice(0, 20);
-                    console.log("new",NewphoneDisplay.length);
-
-
-                    
-
-
-
-
-                    const PhoneDiv = document.getElementById("about-phone");
-                    PhoneDiv.textContent="";
-                    NewphoneDisplay.forEach((phone) => {
-                      const div = document.createElement("div");
-                      div.classList.add("col");
-                      div.innerHTML = `
+    const PhoneDiv = document.getElementById("about-phone");
+    PhoneDiv.textContent = "";
+    NewphoneDisplay.forEach((phone) => {
+      const div = document.createElement("div");
+      div.classList.add("col");
+      div.innerHTML = `
                                       
                                       
                                       <div class="card h-100 p-4">
@@ -60,17 +100,20 @@ const DisplayPhone = (phoneDisplay) => {
                                         </div>
                                       
                                       `;
-                  
-                      PhoneDiv.appendChild(div);
-                    });
-                    
-          }else{
 
-                    console.log("no data");
-          }
-    
+      PhoneDiv.appendChild(div);
+    });
+  } else {
+    // console.log("no data");
+    const p = document.createElement("p");
+    p.innerHTML = alert`please Not found value`;
+  }
+
   //   console.log(phoneDisplay);
 };
+
+
+
 
 const GetphoneId = (phoneId) => {
   const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`;
