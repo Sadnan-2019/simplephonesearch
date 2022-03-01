@@ -129,7 +129,7 @@ const PhoneDetails = (phoneDetail) => {
 
                   
                   
-                  <div class="col-lg-6  d-flex justify-content-center    ">
+                  <div class="col-12 col-sm-12 col-lg-6  d-flex justify-content-center    ">
                   <img src="${
                     phoneDetail.image
                   }" class=" phone-img  img-fluid my-5  "   alt="..."   >
@@ -137,7 +137,7 @@ const PhoneDetails = (phoneDetail) => {
                   </div>
 
 
-                  <div class="col-lg-6 d-flex justify-content-center "  >
+                  <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center "  >
                   <div class="card-body my-5 " >
                   <span class="fw-bolder">Brand Name: ${
                     phoneDetail.brand
