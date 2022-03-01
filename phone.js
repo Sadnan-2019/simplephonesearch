@@ -75,7 +75,7 @@ const DisplayPhone = (phoneDisplay) => {
                                 <p class="card-title fw-bolder">Phone Name : ${phone.phone_name}</p>
                                </div>
                               <div class="card-footer">
-                              <button class="btn btn-info " onclick="GetphoneId('${phone.slug}')" > Details</button>
+                              <button class="btn btn-success " onclick="GetphoneId('${phone.slug}')" > Details</button>
                               </div>
                             </div>
                           
@@ -132,13 +132,13 @@ const PhoneDetails = (phoneDetail) => {
                   <div class="col-12 col-sm-12 col-lg-6  d-flex justify-content-center    ">
                   <img src="${
                     phoneDetail.image
-                  }" class=" phone-img  img-fluid my-5  "   alt="..."   >
+                  }" class="  img-fluid my-5  "   alt="..." style="  height:400px"  >
                   
                   </div>
 
 
                   <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center "  >
-                  <div class="card-body my-5 col-12 col-sm-12" >
+                  <div class="card-body my-5 " >
                   <span class="fw-bolder">Brand Name: ${
                     phoneDetail.brand
                   }</span><br>
@@ -149,7 +149,9 @@ const PhoneDetails = (phoneDetail) => {
                     phoneDetail.releaseDate
                       ? phoneDetail.releaseDate
                       : "No Realese Date"
-                  }</span><br>
+                  }</span><br><hr>
+                  <span class="fw-bolder text-success ">MainFeatures Info:</span><br>
+                  
                   <span class="fw-bolder">Chipset: ${
                     phoneDetail.mainFeatures.chipSet
                   }</span><br>
@@ -162,6 +164,9 @@ const PhoneDetails = (phoneDetail) => {
                   <span class="fw-bolder">Sensors:${
                     phoneDetail.mainFeatures.sensors
                   }</span><br>
+                  <hr>
+                  <span class="fw-bolder text-success ">Others Info:</span><br>
+                   
                   <span class="fw-bolder">Blutooth:${
                     phoneDetail.others.Bluetooth
                   }</span><br>
