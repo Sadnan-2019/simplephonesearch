@@ -132,7 +132,7 @@ const PhoneDetails = (phoneDetail) => {
                   <div class="col-lg-6  d-flex justify-content-center    ">
                   <img src="${
                     phoneDetail.image
-                  }" class="  img-fluid my-5  "   alt="..." style="  height:400px"  >
+                  }" class=" phone-img  img-fluid my-5  "   alt="..."   >
                   
                   </div>
 
