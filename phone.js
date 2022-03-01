@@ -138,7 +138,7 @@ const PhoneDetails = (phoneDetail) => {
 
 
                   <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center "  >
-                  <div class="card-body my-5 " >
+                  <div class="card-body my-5 col-12 col-sm-12" >
                   <span class="fw-bolder">Brand Name: ${
                     phoneDetail.brand
                   }</span><br>
