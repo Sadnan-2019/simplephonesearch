@@ -85,6 +85,8 @@ const DisplayPhone = (phoneDisplay) => {
 
      
     });
+
+    
   } else {
     document.getElementById("about-phone").textContent ="";
 
