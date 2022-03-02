@@ -168,17 +168,17 @@ const PhoneDetails = (phoneDetail) => {
                   <span class="fw-bolder">Display Size: ${
                     phoneDetail.mainFeatures.displaySize
                   }</span><br>
-                  <span class="fw-bolder">Sensors:${
+                  <span class="fw-bolder">Sensors: ${
                     phoneDetail.mainFeatures.sensors
                   }</span><br>
                   <hr>
                   <span class="fw-bolder text-success ">Others Info:</span><br>
                    
-                  <span class="fw-bolder">Blutooth:${
-                    phoneDetail.others?.Bluetooth ? phoneDetail.others?.Bluetooth : "No Blutooth"
+                  <span class="fw-bolder">Blutooth: ${
+                    phoneDetail.others?.Bluetooth ? phoneDetail.others?.Bluetooth : "NO Blutooth"
                   }</span><br>
                   <span class="fw-bolder">GPS:
-                  ${(phoneDetail.others?.GPS ? phoneDetail.others?.GPS : "No GPS")}
+                  ${(phoneDetail.others?.GPS ? phoneDetail.others?.GPS : "NO GPS")}
 
                   </span><br>
                   <span class="fw-bolder">NFC:
