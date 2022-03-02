@@ -17,3 +17,9 @@
           border-radius: 10px;
            
         }
+
+        #spinner{
+
+          display: none;
+          animation-delay: 2s;
+      }

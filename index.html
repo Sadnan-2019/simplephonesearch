@@ -12,75 +12,67 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="phone.css">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+     <link rel="stylesheet" href="phone.css">
     
 
-        
-    </style>
+
+    
   </head>
   <body>
     <h2 class="text-center text-success my-4">My Phone House</h2>
-
     <section class="container">
       <div class="row">
-        <div class="col-12 col-sm-12 col-lg-12">
+        <div class="col-12 col-sm-12 col-lg-12 my-4">
           <div class="input-group mb-3 w-50 mx-auto">
-                    
-            <input
+             <input
               type="text"
               class="form-control"
               placeholder="Search Phone"
               id="search-field"
-              
             />
-            
+
             <button
-              class="btn btn-outline-secondary"
+              class="btn bg-light btn-outline-secondary"
               type="button"
-              
               onclick="SearchClick()"
             >
-              Search 
+              Search
             </button>
-
-            
           </div>
-          <p class="text-center text-danger    " id="no-input"> </p>
-          <p class="text-center text-danger " id="no-found"></p>
-          
-
+          <p class="text-center text-danger" id="no-input"></p>
+          <p class="text-center text-danger" id="no-found"></p>
+          <img src="spinner.gif" style="height: 150px;  " class=" " id="spinner">
+           
 
         </div>
       </div>
 
-
-<!-- //phone details -->
-      <div class="row" >
-          <div class=" col-12 col-sm-12 col-lg-12  " id="phone-details">
-                    
-                    
-          </div>
-
-        </div>
-       
+      <!-- //phone details -->
+      <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12" id="phone-details"></div>
+      </div>
 
       <!-- display all phone -->
-        <div class="row row-cols-1 row-cols-md-3 g-4 " id="about-phone">
-          <!-- <div class="col">
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="about-phone">
+        <!-- <div class="col">
                       
                     </div> -->
-        </div>
-         
+      </div>
 
-        <!-- <div class="row" >
+      <!-- <div class="row" >
           <div class="col-md-12 d-flex justify-content-center" id="phone-details">
                     
                     
           </div>
 
         </div> -->
-       
     </section>
   </body>
 

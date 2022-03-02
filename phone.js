@@ -1,43 +1,40 @@
 // console.log("ll;po vyt");
 
- 
-
 const SearchClick = () => {
+  document.getElementById("spinner").style.display = "block";
   const searchInput = document.getElementById("search-field");
   const searchInputValue = searchInput.value;
   const PhoneDetailsNull = document.getElementById("phone-details");
   const noFoundError = document.getElementById("no-found");
   const InputError = document.getElementById("no-input");
-  InputError.innerHTML =""
-
+  InputError.innerHTML = "";
 
   if (searchInputValue === "" || searchInputValue == null) {
-    console.log("empty>>>")
+    document.getElementById("spinner").style.display = "none";
+    // console.log("empty>>>");
     noFoundError.textContent = "";
-//     const p = document.createElement("p");
-//     p.innerHTML = alert`please input value`;
-    
-//     const div = document.createElement("div");
+    //     const p = document.createElement("p");
+    //     p.innerHTML = alert`please input value`;
 
-//     div.innerHTML = `<h3>Please Input Valid Value</h3>
-          
-//           `;
+    //     const div = document.createElement("div");
 
-//           InputError.appendChild(div);
-          // InputError.textContent =""
-        
-          const div = document.createElement("div");
+    //     div.innerHTML = `<h3>Please Input Valid Value</h3>
+
+    //           `;
+
+    //           InputError.appendChild(div);
+    // InputError.textContent =""
+
+    const div = document.createElement("div");
 
     div.innerHTML = `<h3>Please Input Valid Value</h3>
           
           `;
-          InputError.appendChild(div);
+    InputError.appendChild(div);
 
-          // InputError.style.display ="block";
-          // InputError.style.color ="red";
-
+    // InputError.style.display ="block";
+    // InputError.style.color ="red";
   } else {
-
     noFoundError.textContent = "";
     PhoneDetailsNull.textContent = "";
     //     console.log("done ", searchInputValue);
@@ -75,16 +72,24 @@ const DisplayPhone = (phoneDisplay) => {
                                 <p class="card-title fw-bolder">Phone Name : ${phone.phone_name}</p>
                                </div>
                               <div class="card-footer">
-                              <button class="btn btn-success " onclick="GetphoneId('${phone.slug}')" > Details</button>
+                              <button class="btn btn-info " onclick="GetphoneId('${phone.slug}')" > Details</button>
                               </div>
                             </div>
                           
                           `;
 
       PhoneDiv.appendChild(div);
+
+      document.getElementById("spinner").style.display = "none";
       // noFoundError.appendChild(div).innerHTML="";
+
+     
     });
   } else {
+    document.getElementById("about-phone").textContent ="";
+
+    document.getElementById("spinner").style.display = "none";
+
     const noFoundError = document.getElementById("no-found");
     const div = document.createElement("div");
 
@@ -93,7 +98,7 @@ const DisplayPhone = (phoneDisplay) => {
           `;
 
     noFoundError.appendChild(div);
-//     PhoneDiv.textContent = "";
+    //     PhoneDiv.textContent = "";
     // div.innerHTML ="";
 
     // noFoundError.appendChild(div).textContent = "";
@@ -138,7 +143,7 @@ const PhoneDetails = (phoneDetail) => {
 
 
                   <div class="col-12 col-sm-12 col-lg-6 d-flex justify-content-center "  >
-                  <div class="card-body col-12 col-sm-12 my-5 " >
+                  <div class="card-body my-5 " >
                   <span class="fw-bolder">Brand Name: ${
                     phoneDetail.brand
                   }</span><br>
@@ -168,22 +173,23 @@ const PhoneDetails = (phoneDetail) => {
                   <span class="fw-bolder text-success ">Others Info:</span><br>
                    
                   <span class="fw-bolder">Blutooth:${
-                    phoneDetail.others.Bluetooth
+                    phoneDetail.others?.Bluetooth ? phoneDetail.others?.Bluetooth : "No Blutooth"
                   }</span><br>
                   <span class="fw-bolder">GPS:
-                  ${("Bluetooth", phoneDetail.others.GPS)}
+                  ${(phoneDetail.others?.GPS ? phoneDetail.others?.GPS : "No GPS")}
+
                   </span><br>
                   <span class="fw-bolder">NFC:
-                  ${("Bluetooth", phoneDetail.others.NFC)}
+                  ${( phoneDetail.others?.NFC ? phoneDetail.others?.NFC : "NO NFC")}
                   </span><br>
                   <span class="fw-bolder">Radio:
-                  ${("Bluetooth", phoneDetail.others.Radio)}
+                  ${( phoneDetail.others?.Radio ? phoneDetail.others?.Radio : "NO Radio")}
                   </span><br>
                   <span class="fw-bolder">USB:
-                  ${("Bluetooth", phoneDetail.others.USB)}
+                  ${( phoneDetail.others?.USB ? phoneDetail.others?.USB : "NO USB" )}
                   </span><br>
                   <span class="fw-bolder">WLAN:
-                  ${("Bluetooth", phoneDetail.others.WLAN)}
+                  ${( phoneDetail.others?.WLAN ? phoneDetail.others?.WLAN : "NO WLAN")}
                   </span>
                    </div>
                   
